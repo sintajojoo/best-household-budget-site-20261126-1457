@@ -1,0 +1,78 @@
+/* Alvarez Family Budget — a household ledger look: cream paper, dark green
+   ink, amber accent. System fonts only, so nothing loads over the network. */
+:root {
+  --paper: #f6f1e3;
+  --card: #fffdf4;
+  --ink: #22301f;
+  --muted: #5a6b57;
+  --green: #1d5c3f;
+  --green-soft: #dcead9;
+  --amber: #c98a1b;
+  --amber-soft: #f3e3c2;
+  --red: #a03d2d;
+  --line: #ddd5b8;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+a { color: var(--green); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+.topbar { background: var(--green); color: #f2f7ef; padding: 12px 20px; display: flex; gap: 24px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+.brand { display: flex; gap: 10px; align-items: center; }
+.brand .mark { background: var(--amber); color: #231a05; font-weight: 800; font-size: 20px; width: 34px; height: 34px; border-radius: 8px; display: grid; place-items: center; }
+.brand strong { display: block; font-size: 17px; line-height: 1.2; }
+.brand small { color: #cfe3cf; font-size: 12px; }
+nav { display: flex; gap: 4px; flex-wrap: wrap; }
+nav a { color: #d9ead9; text-decoration: none; padding: 6px 11px; border-radius: 6px; font-size: 14px; }
+nav a:hover { background: #2a6b4a; color: #fff; }
+nav a.active { background: var(--amber); color: #231a05; font-weight: 700; }
+.hero { display: flex; justify-content: space-between; gap: 20px; align-items: end; margin: 22px 0 14px; flex-wrap: wrap; }
+.hero h1 { margin: 0; font-size: 30px; line-height: 1.1; }
+.lede { color: var(--muted); margin: 6px 0 0; max-width: 640px; }
+.hero-note { background: var(--amber-soft); border: 1px solid #e3c98a; border-radius: 8px; padding: 10px 14px; margin: 0; font-size: 14px; }
+.kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 14px; }
+.kpi { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+.kpi-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.kpi-value { font-size: 26px; font-weight: 800; color: var(--green); }
+.kpi-sub { font-size: 12px; color: var(--muted); }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 14px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; margin-bottom: 14px; }
+.card h2 { margin: 0 0 10px; font-size: 18px; }
+.muted { color: var(--muted); font-size: 13px; }
+.catline { display: flex; justify-content: space-between; font-size: 14px; margin-top: 8px; }
+.bar { background: #e9e2c9; border-radius: 5px; height: 10px; overflow: hidden; margin: 3px 0 8px; }
+.bar span { display: block; height: 100%; background: var(--green); border-radius: 5px; }
+.bar.warm span { background: var(--amber); }
+.bar.over span { background: var(--red); }
+.tbl { width: 100%; border-collapse: collapse; font-size: 14px; }
+.tbl th, .tbl td { text-align: left; padding: 8px 6px; border-bottom: 1px solid #ece5cd; vertical-align: middle; }
+.tbl th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+.tbl td small { color: var(--muted); }
+.tag { font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 20px; white-space: nowrap; }
+.tag.ok { background: var(--green-soft); color: var(--green); }
+.tag.warm { background: var(--amber-soft); color: #7a5410; }
+.tag.over { background: #f6d9d2; color: var(--red); }
+.billrow { display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-bottom: 1px solid #ece5cd; font-size: 14px; }
+.billrow:last-child { border-bottom: 0; }
+.formrow { display: flex; gap: 10px; align-items: end; flex-wrap: wrap; }
+.formrow label { display: grid; gap: 3px; font-size: 12px; color: var(--muted); }
+input, select { font: inherit; padding: 7px 9px; border: 1px solid #c9bfa0; border-radius: 6px; background: #fff; color: var(--ink); }
+input[type="number"] { width: 110px; }
+button { font: inherit; background: var(--green); color: #fff; border: 0; border-radius: 6px; padding: 8px 14px; cursor: pointer; }
+button:hover { background: #267350; }
+button.due { background: var(--amber); color: #231a05; font-weight: 700; }
+button.paid { background: var(--green-soft); color: var(--green); }
+.goal-num { font-size: 22px; margin: 4px 0 8px; }
+.donut-wrap { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
+.legend { list-style: none; margin: 0; padding: 0; font-size: 13px; }
+.legend li { padding: 3px 0; }
+.sw { display: inline-block; width: 11px; height: 11px; border-radius: 3px; margin-right: 7px; }
+.insights li { margin: 8px 0; }
+.foot { color: var(--muted); font-size: 13px; padding-bottom: 28px; }
+@media (max-width: 760px) {
+  .kpis { grid-template-columns: repeat(2, 1fr); }
+  .grid2, .grid3 { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 24px; }
+  .tbl { font-size: 13px; }
+  input[type="number"] { width: 90px; }
+}
